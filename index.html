@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Geotarget — Personal Injury</title>
+<meta name="description" content="Hyperlocal video advertising for personal injury firms. A billboard at the worst intersection in town — except this one is video, and it follows the commuter home.">
+<meta name="theme-color" content="#141314">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#141314; --panel:#1C1B1C; --gold:#DCBC4E; --gold-hover:#E8CC64;
+  --paper:#FDFDFD; --mist:#A8A8A9; --ash:#666769; --line:rgba(168,168,169,.13);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased;background:var(--ink);color:var(--paper)}
+body{background:var(--ink);color:var(--paper);font-family:Inter,Arial,Helvetica,sans-serif;font-size:17px;line-height:1.62}
+h1,h2,h3{font-family:Montserrat,Arial,Helvetica,sans-serif;line-height:1.08;letter-spacing:-.02em;text-wrap:balance}
+p{text-wrap:pretty}
+a{color:var(--gold)}
+button:not(:disabled),[role="button"]:not(:disabled){cursor:pointer}
+::selection{background:var(--gold);color:var(--ink)}
+.wrap{width:100%;max-width:72rem;margin:0 auto;padding:0 1.5rem}
+.eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ash)}
+img{display:block;max-width:100%}
+header{padding:2.5rem 0 0}
+header img{width:186px;height:auto}
+.hero{padding:3.5rem 0 4rem;border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(2.2rem,5.8vw,3.7rem);font-weight:800;margin:1.15rem 0 1.4rem;max-width:19ch}
+.hero .lede{font-size:1.09rem;max-width:34rem;color:var(--mist)}
+.hero .moment{margin-top:2rem;padding-top:1.6rem;border-top:1px solid var(--line);
+  font-family:Montserrat,Arial,sans-serif;font-weight:700;color:var(--gold);
+  font-size:clamp(1.15rem,2.9vw,1.5rem);letter-spacing:-.015em;max-width:36rem}
+.pair{display:grid;border-bottom:1px solid var(--line)}
+@media(min-width:800px){.pair{grid-template-columns:1fr 1fr}}
+.pair figure{position:relative}
+.pair img,.shots img{width:100%;aspect-ratio:16/10;object-fit:cover;outline:1px solid rgba(253,253,253,.1);outline-offset:-1px}
+@media(min-width:800px){.pair img{aspect-ratio:4/3}}
+.pair figcaption{position:absolute;bottom:0;left:0;background:rgba(20,19,20,.8);padding:.65rem 1rem;
+  font-family:Montserrat,sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.band{padding:4rem 0;border-bottom:1px solid var(--line)}
+.band h2{font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:700;margin:.9rem 0 1.4rem;max-width:24ch}
+.rows{margin-top:2.5rem;display:grid;gap:2.2rem}
+@media(min-width:800px){.rows{grid-template-columns:repeat(3,1fr);gap:3rem}}
+.rows h3,.targets h3{font-size:1.06rem;font-weight:700;margin-bottom:.6rem}
+.rows p,.targets p{font-size:.97rem;color:var(--mist)}
+.intro{max-width:36rem;color:var(--mist);margin-top:1.2rem}
+.targets{margin-top:3rem;display:grid;gap:2.5rem}
+@media(min-width:800px){.targets{grid-template-columns:1fr 1fr;column-gap:2.5rem}}
+.targets li{list-style:none;border-top:1px solid var(--line);padding-top:1.2rem}
+.targets .n{font-family:Montserrat,sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.targets h3{margin-top:.5rem;font-size:1.12rem}
+.shots{margin-top:3.5rem;display:grid;gap:.75rem}
+@media(min-width:800px){.shots{grid-template-columns:1fr 1fr}}
+.shots img{aspect-ratio:4/3}
+.excl{background:var(--panel)}
+.excl .stamp{display:inline-block;margin-bottom:1.4rem;padding:.42rem .85rem;
+  border:1px solid var(--gold);color:var(--gold);font-size:.68rem;font-weight:600;
+  letter-spacing:.15em;text-transform:uppercase}
+.excl .measure{max-width:34rem}
+.close{padding:5rem 1.5rem 6rem;text-align:center}
+.close h2{margin:0 auto 1.2rem;max-width:18ch;font-size:clamp(1.7rem,3.6vw,2.4rem)}
+.close > p{margin:0 auto;max-width:30rem;color:var(--mist)}
+form{margin:2rem auto 0;max-width:23rem;text-align:left}
+.field{margin-bottom:1rem}
+.field label{display:block;font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ash);margin-bottom:.4rem}
+.field input{width:100%;background:transparent;color:var(--paper);font:inherit;
+  border:1px solid rgba(168,168,169,.3);padding:.8rem .85rem;border-radius:0}
+.field input:hover{border-color:rgba(168,168,169,.55)}
+.field input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.btn{display:inline-flex;align-items:center;justify-content:center;width:100%;min-height:3rem;
+  margin-top:.25rem;background:var(--gold);color:var(--ink);font-family:Montserrat,Arial,sans-serif;
+  font-weight:700;font-size:1rem;border:0;padding:1.05rem 2.1rem;cursor:pointer;line-height:1.25;
+  transition:transform .16s ease,background .16s ease}
+.btn:hover{background:var(--gold-hover);transform:translateY(-2px)}
+.btn:focus-visible{outline:2px solid var(--paper);outline-offset:2px}
+.btn[disabled]{opacity:.6;cursor:default;transform:none}
+#err{min-height:1.2rem;margin:.4rem 0;font-size:.85rem;color:var(--paper)}
+#done{display:none;margin-top:2rem}
+#done.on{display:block}
+#done .tick{font-family:Montserrat,sans-serif;font-weight:800;font-size:1.35rem;color:var(--gold)}
+#done p{margin-top:.6rem;color:var(--mist)}
+footer{padding:1.5rem 1.5rem 3.5rem;color:var(--ash);font-size:.82rem}
+footer .wrap{display:flex;flex-direction:column;gap:.5rem}
+@media(min-width:640px){footer .wrap{flex-direction:row;align-items:center;justify-content:space-between}}
+footer a{color:var(--ash);text-decoration:none}
+footer a:hover{color:var(--gold)}
+.skip{position:absolute;left:-999px}
+.skip:focus{left:12px;top:12px;z-index:50;background:var(--gold);color:var(--ink);padding:.5rem 1rem;font-family:Montserrat,sans-serif;font-weight:700}
+</style>
+</head>
+<body>
+<a class="skip" href="#close">Skip to contact</a>
+<header>
+  <div class="wrap"><img src="/logo.png" alt="GeoTarget" width="186" height="42"></div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Personal Injury</p>
+    <h1>Be the name they already know.</h1>
+    <p class="lede">Nobody shops for a personal injury attorney. After a crash they pick a name from memory — from the passenger seat, the waiting room, the night they finally sit down at the kitchen table. We make sure that name is yours — and we’ll only do it for one injury firm per market.</p>
+    <p class="moment">Think of it as a billboard at the worst intersection in town. Except this one is video — and it follows the commuter home.</p>
+  </div>
+</section>
+
+<section class="pair" aria-label="From the roadside to the living room">
+  <div class="wrap" style="padding:0;display:contents">
+    <figure>
+      <img src="/intersection.jpg" alt="Night traffic at a rain-slick urban intersection" width="1400" height="788">
+      <figcaption>The intersection</figcaption>
+    </figure>
+    <figure>
+      <img src="/living-room.jpg" alt="A living room at night with a television and phone glowing" width="1400" height="788">
+      <figcaption>Then the living room</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">What actually runs</p>
+    <h2>A commercial about your firm, shown to the people who drive those roads.</h2>
+    <div class="rows">
+      <div>
+        <h3>The crash does the selling</h3>
+        <p>Accidents happen on the same roads, every week. Nobody needs convincing the problem is real. The people sitting in that traffic already know those intersections.</p>
+      </div>
+      <div>
+        <h3>There is no loyalty to lose</h3>
+        <p>Most people in this market cannot name an injury attorney until they need one. The billboard they drove past once is not the name that surfaces.</p>
+      </div>
+      <div>
+        <h3>Frequency is the product</h3>
+        <p>Once is a glimpse. Five times is a memory. We buy the repetition that turns your name into the one they already know when it matters.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Where the brand sits</p>
+    <h2>The places injury attorneys already want their name.</h2>
+    <p class="intro">We build the audience from the roads, intersections, corridors, and events that actually produce the cases — and you can see exactly who that reaches before you commit.</p>
+    <ol class="targets">
+      <li>
+        <p class="n">01</p>
+        <h3>Major commuter choke points</h3>
+        <p>The stretches everybody sits in twice a day. Phones are already out. That is the first place the commercial runs.</p>
+      </li>
+      <li>
+        <p class="n">02</p>
+        <h3>High-accident intersections</h3>
+        <p>The ones everybody already calls a nightmare. You would put a board there. We put video there — then we take it home with them.</p>
+      </li>
+      <li>
+        <p class="n">03</p>
+        <h3>Collision and auto-service corridors</h3>
+        <p>Body shops, glass, towing. The first stop after impact, and the people who work and wait along that strip.</p>
+      </li>
+      <li>
+        <p class="n">04</p>
+        <h3>Major community events</h3>
+        <p>Games, festivals, fairs — the rooms where a city already pays attention. Your name shows up in the same air.</p>
+      </li>
+      <li>
+        <p class="n">05</p>
+        <h3>Places injury attorneys want their brand</h3>
+        <p>The same corners you already fight to own. We take that placement and make it a commercial that does not stay on the roadside.</p>
+      </li>
+    </ol>
+    <div class="shots">
+      <img src="/corridor.jpg" alt="Dusk along a collision and auto-service corridor" width="1200" height="900">
+      <img src="/event.jpg" alt="Stadium lights over a packed Friday-night community game" width="1200" height="900">
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="measure" style="max-width:34rem">
+      <p class="eyebrow">The billboard, rewritten</p>
+      <h2>A static board stays on the roadside.</h2>
+      <p class="intro">We produce the commercial, then deliver it to the same commuters on the phone in the cupholder, the tablet on the couch, the living-room screen after they pull in the driveway. The intersection puts your name in front of them. Frequency makes it the name they already know.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band excl">
+  <div class="wrap">
+    <div class="measure">
+      <span class="stamp">One per market</span>
+      <h2>This market is open.</h2>
+      <p class="intro">This is our first move into personal injury here, so nothing is spoken for yet. We work with a single injury firm per market and we hold that line in writing. Once a competitor signs where you operate, we won’t sell against them — and we won’t sell to you either.</p>
+    </div>
+  </div>
+</section>
+
+<section class="close" id="close">
+  <h2>Want the details by phone?</h2>
+  <p>Leave a name and a number. We’ll call you.</p>
+  <form id="ring-form" novalidate>
+    <div class="field">
+      <label for="first">First name</label>
+      <input id="first" name="first" type="text" autocomplete="given-name" maxlength="80" required>
+    </div>
+    <div class="field">
+      <label for="firm">Firm</label>
+      <input id="firm" name="firm" type="text" autocomplete="organization" maxlength="80">
+    </div>
+    <div class="field">
+      <label for="phone">Phone</label>
+      <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="80" required>
+    </div>
+    <p id="err" role="alert"></p>
+    <button class="btn" id="ring" type="submit">I’m interested, give me a ring</button>
+  </form>
+  <div id="done">
+    <p class="tick">Got it.</p>
+    <p>We’ll ring you shortly.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Geotarget · Hyperlocal video advertising for local business</p>
+    <p><a href="tel:8775966232">877-596-6232</a> · <a href="mailto:info@geotargetus.com">Info@geotargetus.com</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var form = document.getElementById('ring-form');
+  var btn = document.getElementById('ring');
+  var first = document.getElementById('first');
+  var firm = document.getElementById('firm');
+  var phone = document.getElementById('phone');
+  var err = document.getElementById('err');
+  var done = document.getElementById('done');
+  var LABEL = btn.textContent;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    err.textContent = '';
+    var f = first.value.trim();
+    var p = phone.value.trim();
+    if (!f) { err.textContent = 'Please add your first name.'; first.focus(); return; }
+    if (!p) { err.textContent = 'Please add a number we can reach.'; phone.focus(); return; }
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    try {
+      var prior = JSON.parse(localStorage.getItem('gt-pi-interest') || '[]');
+      prior.push({ firstName: f, firm: firm.value.trim(), phone: p, at: new Date().toISOString() });
+      localStorage.setItem('gt-pi-interest', JSON.stringify(prior));
+    } catch (x) {}
+    setTimeout(function(){
+      form.style.display = 'none';
+      done.className = 'on';
+    }, 380);
+  });
+})();
+</script>
+</body>
+</html>
